@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>动态血压报表</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,li,div{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: url('__PUBLIC__/Reception/background/2bj.jpg') no-repeat;
+            background-size: 100%;
+            color: #333;
+        }
+        .container{
+            width: 100%;
+            min-height: 300px;
+            position: absolute;
+            top:100px;
+            left: 0;
+        }
+        .bg{
+            color: #fff;;
+        }
+        .bg span{
+            padding: 0 8px;
+            margin-left: 8px;
+            border-left: 3px solid #fff;
+        }
+        .small-font{
+            font-size:12px;
+            -webkit-transform-origin-x: 0;
+            -webkit-transform: scale(0.90);
+        }
+
+
+        .smallsize-font {
+            font-size:10.8px;
+        }
+        .personal{
+            width: 100%;
+            min-height: 100px;
+            margin-top: 8px;
+            /*border: 1px solid #000;*/
+        }
+        .personal_p{
+            width: 100%;
+            height: 40px;;
+            line-height: 40px;
+            padding-left: 8px;
+            font-size: 15px;
+            border-bottom: 1px solid #333;
+        }
+        .info_many{
+            width: 100%;
+            min-height: 80px;
+            font-size: 14px;
+            margin:  0 5%;
+        }
+        .info_top,.info_bottom{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+        }
+        .info_top p{
+            display: inline-block;
+            width: 32.3%;
+            text-align: justify;
+            /*border: 1px solid #000;*/
+        }
+        .info_bottom p{
+            display: inline-block;
+            width: 49%;
+            text-align: justify;
+        }
+        .next{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .next a{
+            color:#197AE5;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .prev{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        .prev a{
+            color:#197AE5;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="bg">
+        <span>基本信息 <a class="small-font smallsize-font" >BASIC INFORMATION</a></span>
+    </div>
+    <div class="personal">
+        <p class="personal_p">个人信息</p>
+        <div class="info_many">
+            <div class="info_top">
+                <p>姓名：{$patient['name']}</p>
+                <p>性别：{$patient['sex']}</p>
+                <p>年龄：{$patient['year']}</p>
+            </div>
+            <div class="info_top">
+                <p>身高：{$patient['high_number']}</p>
+                <p>体重：{$patient['weight']}</p>
+            </div>
+        </div>
+        <p class="personal_p">基本信息</p>
+        <div class="info_many">
+            <div class="info_bottom">
+                <p>开始时间：{$start_date}</p>
+              
+            </div>
+            <div class="info_bottom">
+                <p>结束时间：{$end_date}</p>
+                
+            </div>
+            <div class="info_bottom">
+               
+                <p>成功的读数：{$count}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="prev">
+    <a href="__APP__/Personal/statement_index">上一页</a>
+</div>
+<div class="next">
+    <a href="__APP__/Personal/qxt">下一页</a>
+</div>
+</body>
+</html>
